@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffd1dc 0%, #ffb6c1 25%, #ff69b4 50%, #ffb6c1 75%, #ffd1dc 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            box-shadow: 0 8px 32px rgba(255, 105, 180, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            max-width: 600px;
+            margin: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #d63384;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #c71585;
+            margin-bottom: 2rem;
+        }
+
+        .heart-container {
+            font-size: 5rem;
+            margin: 2rem 0;
+            animation: heartbeat 1.5s ease infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            15% { transform: scale(1.15); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+        }
+
+        .message {
+            font-size: 1.2rem;
+            color: #8b008b;
+            line-height: 1.8;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            margin-top: 1rem;
+        }
+
+        .sparkle {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 3s linear infinite;
+            box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+        }
+
+        @keyframes sparkle {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .flowers {
+            font-size: 2rem;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Eres Muy Guapa</h1>
+        <p class="subtitle">Mi Princesa Hermosa 👑</p>
+        <div class="heart-container">💖</div>
+        <p class="message">
+            Cada día a tu lado es un regalo. 
+            Tu sonrisa ilumina mi mundo y tu amor 
+            hace que todo valga la pena. 
+            Te amo más de lo que las palabras pueden expresar. 💕
+        </p>
+        <div class="flowers">🌸 🌷 🌹 🌺 🌸</div>
+    </div>
+
+    <script>
+        // Crear destellos flotantes
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 5000);
+        }
+
+        // Crear destellos cada 300ms
+        setInterval(createSparkle, 300);
+
+        // Crear algunos destellos iniciales
+        for (let i = 0; i < 15; i++) {
+            setTimeout(createSparkle, i * 100);
+        }
+    </script>
+</body>
+</html>
